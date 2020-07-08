@@ -1,6 +1,8 @@
-<h1>Index</h1>
+<h1>Sobre Nos</h1>
 <hr />
 
 <?php
-    echo 'Chegamos ao IndexController e disparamos a action sobreNos';
+	foreach($this->view->dados as $indice => $valor) {
+		echo $valor.'<br />';
+	}
 ?>
