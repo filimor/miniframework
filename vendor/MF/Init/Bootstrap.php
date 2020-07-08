@@ -24,18 +24,15 @@ abstract class Bootstrap {
 		foreach ($this->getRoutes() as $key => $route) {
 			if($url == $route['route']) {
 				$class = "App\\Controllers\\".ucfirst($route['controller']);
-
-				$controller = new $class;
-				
+				$controller = new $class;				
 				$action = $route['action'];
-
 				$controller->$action();
 			}
 		}
     }
     
     protected function getUrl() {
-		return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+		return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);	
 	}
 }
 
